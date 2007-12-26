@@ -1,0 +1,11 @@
+--- Coherence-0.4.0/coherence/upnp/core/utils.py~	2007-07-12 00:13:04.000000000 +0200
++++ Coherence-0.4.0/coherence/upnp/core/utils.py	2007-12-26 20:45:13.750845014 +0100
+@@ -69,7 +69,7 @@
+                     if l[2] != '00000000': #default gateway...
+                         route.close()
+                         return get_ip_address(l[0])
+-    except IOerror:
++    except IOError:
+         """ fallback to parsing the output of netstat """
+         import os, posix
+         (osname,_, _, _,_) = os.uname()
