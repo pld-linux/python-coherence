@@ -12,6 +12,7 @@ Requires:	python-Louie
 Requires:	python-TwistedCore
 Requires:	python-TwistedWeb
 Requires:	python-configobj
+Requires:	python-setuptools
 %pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
