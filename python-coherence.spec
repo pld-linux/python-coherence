@@ -1,4 +1,5 @@
 Summary:	A DLNA/UPnP MediaServer protocol implementation
+Summary(pl.UTF-8):	Implementacja protokołu  DLNA/UPnP MediaServer
 Name:		python-coherence
 Version:	0.4.0
 Release:	1
@@ -24,6 +25,11 @@ clients.
 
 And together with GStreamer it forms a controllable DLNA/UPnP
 MediaRenderer.
+
+%description -l pl.UTF-8
+Wolno stojąca aplikacja Coherence służy jako DLNA/UPnP MediaServer i 
+udostępnia lokalne i zdalne pliki multimedialne przez jego wtyczki do
+innych klientów UPnP.
 
 %prep
 %setup -q -n Coherence-%{version}
