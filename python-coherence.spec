@@ -10,6 +10,7 @@ Source0:	https://coherence.beebits.net/download/Coherence-%{version}.tar.gz
 Patch0:		%{name}-syntax.patch
 URL:		https://coherence.beebits.net/
 BuildRequires:	python-devel >= 1:2.5.0
+BuildRequires:	python-setuptools
 Requires:	python-Louie
 Requires:	python-TwistedCore
 Requires:	python-TwistedWeb
