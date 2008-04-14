@@ -1,5 +1,5 @@
 Summary:	A DLNA/UPnP MediaServer protocol implementation
-Summary(pl.UTF-8):	Implementacja protokołu  DLNA/UPnP MediaServer
+Summary(pl.UTF-8):	Implementacja protokołu DLNA/UPnP MediaServer
 Name:		python-coherence
 Version:	0.4.0
 Release:	2
@@ -9,8 +9,9 @@ Source0:	https://coherence.beebits.net/download/Coherence-%{version}.tar.gz
 # Source0-md5:	b3fdc0de8ae46c6c9efdc4e7d6204417
 Patch0:		%{name}-syntax.patch
 URL:		https://coherence.beebits.net/
-BuildRequires:	python-devel >= 1:2.5.0
+BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-setuptools
+BuildRequires:	rpm-pythonprov
 Requires:	python-Louie
 Requires:	python-TwistedCore
 Requires:	python-TwistedWeb
@@ -29,21 +30,23 @@ And together with GStreamer it forms a controllable DLNA/UPnP
 MediaRenderer.
 
 %description -l pl.UTF-8
-Wolno stojąca aplikacja Coherence służy jako DLNA/UPnP MediaServer i 
-udostępnia lokalne i zdalne pliki multimedialne przez jego wtyczki do
+Samodzielna aplikacja Coherence służy jako serwer mediów DLNA/UPnP,
+udostępniając lokalne i zdalne pliki multimedialne poprzez wtyczki dla
 innych klientów UPnP.
+
+Wraz z GStreamerem tworzy sterowalny renderer mediów DLNA/UPnP.
 
 %prep
 %setup -q -n Coherence-%{version}
 %patch0 -p1
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install \
+%{__python} setup.py install \
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
 
