@@ -17,6 +17,8 @@ Requires:	python-TwistedWeb
 Requires:	python-configobj
 Requires:	python-setuptools
 %pyrequires_eq	python-modules
+# For applet:
+Suggests:	python-PyQt4
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

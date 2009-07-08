@@ -1,0 +1,5 @@
+# TODO:
+- separate packages with proper deps:
+  - applet - req: PyQT4
+  - server - maybe some separate user and init script?
+  - libs - for all other uses
