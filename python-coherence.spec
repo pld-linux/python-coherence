@@ -2,11 +2,12 @@ Summary:	A DLNA/UPnP MediaServer protocol implementation
 Summary(pl.UTF-8):	Implementacja protokołu DLNA/UPnP MediaServer
 Name:		python-coherence
 Version:	0.6.4
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries/Python
 Source0:	https://coherence.beebits.net/download/Coherence-%{version}.tar.gz
 # Source0-md5:	d8e78089928a894d87073cdeedf8d2df
+Source1:	org.Coherence.service
 URL:		https://coherence.beebits.net/
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-setuptools
@@ -46,6 +47,9 @@ Wraz z GStreamerem tworzy sterowalny renderer mediów DLNA/UPnP.
 %install
 rm -rf $RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_datadir}/dbus-1/services
+install %SOURCE1 $RPM_BUILD_ROOT%{_datadir}/dbus-1/services/org.Coherence.service
+
 %{__python} setup.py install \
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
@@ -64,3 +68,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %attr(755,root,root) %{_bindir}/*
 %{py_sitescriptdir}/*
+%{_datadir}/dbus-1/services/org.Coherence.service
