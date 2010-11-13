@@ -2,13 +2,14 @@ Summary:	A DLNA/UPnP MediaServer protocol implementation
 Summary(pl.UTF-8):	Implementacja protokołu DLNA/UPnP MediaServer
 Name:		python-coherence
 Version:	0.6.6.2
-Release:	2
+Release:	3
 License:	MIT
 Group:		Libraries/Python
 Source0:	https://coherence.beebits.net/download/Coherence-%{version}.tar.gz
 # Source0-md5:	d7a1b4abf6831c61e37a3b9e2bdc560a
 Source1:	org.Coherence.service
 URL:		https://coherence.beebits.net/
+BuildRequires:	python-TwistedWeb
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-setuptools
 BuildRequires:	rpm-pythonprov
