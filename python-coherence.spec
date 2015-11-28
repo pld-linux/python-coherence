@@ -43,7 +43,7 @@ Wraz z GStreamerem tworzy sterowalny renderer mediów DLNA/UPnP.
 %setup -q -n Coherence-%{version}
 
 %build
-%{__python} setup.py build
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -51,9 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/dbus-1/services
 install %SOURCE1 $RPM_BUILD_ROOT%{_datadir}/dbus-1/services/org.Coherence.service
 
-%{__python} setup.py install \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py_install
 
 %py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
 %py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
