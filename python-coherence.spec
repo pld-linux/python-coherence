@@ -9,6 +9,7 @@ Source0:	https://coherence.beebits.net/download/Coherence-%{version}.tar.gz
 # Source0-md5:	d7a1b4abf6831c61e37a3b9e2bdc560a
 Source1:	org.Coherence.service
 URL:		https://coherence.beebits.net/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	python-TwistedWeb
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-setuptools
